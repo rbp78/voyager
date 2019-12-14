@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/vista','PermissionController@index')->name('permission');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+Auth::routes();
